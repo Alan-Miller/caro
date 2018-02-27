@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.imrg {
+  background-color: red;
+  height: 300px;
+  width: 400px;
+  position: relative;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.imrg div {
+  position: absolute;
+  left: 50%;
+}
