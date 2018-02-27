@@ -4,24 +4,34 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import one from './imgs/one.jpg'
 import two from './imgs/two.jpg'
+import three from './imgs/one.jpg'
+import four from './imgs/two.jpg'
+import './slick.css'
 
 export default class SimpleSlider extends React.Component {
-  render () {
+  render() {
     var settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500
+      // centerMode: true
     };
+    var images = [one, two, three, four]
+
     return (
-      <Slider {...settings}>
-        <div className="imrg"><img height="200" src={one}/></div>
-        <div className="imrg"><img height="200" src={two}/></div>
-        <div className="imrg"><h3>4</h3></div>
-        <div className="imrg"><h3>5</h3></div>
-        <div className="imrg"><h3>6</h3></div>
-      </Slider>
+      <div className="SimpleSlider">
+        <Slider {...settings}>
+          {images.map((img, indx) => (
+            <div className="imrg" style={{ backgroundImage: `url(${img})` }}>
+              {/* <h2>TEXT</h2> */}
+            </div>
+          ))}
+        </Slider>
+      </div>
     );
   }
 }
